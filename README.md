@@ -14,6 +14,7 @@ classDiagram
     + numQuarto: string
     + tipoQuarto: string
     + funcionario: Funcionario
+    + cliente: Cliente
   }
 
   class Funcionario {
@@ -21,7 +22,13 @@ classDiagram
     + cpf: string
   }
 
-  Sistema "1"-->"N" Reserva
-  Reserva "1"-->"1" Funcionario
+  class Cliente {
+    + nome: string
+    + cpf: string
+  }
+
+  Sistema "1" --> "N" Reserva
+  Reserva "1" --> "1" Funcionario
+  Reserva "1" --> "1" Cliente
 
 ```
